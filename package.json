@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register tests"
+    "test": "mocha --compilers js:babel-core/register tests",
+    "eslint": "./node_modules/.bin/eslint"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,11 @@
     "chai": "^3.5.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "locus": "^2.0.1"
   }
 }

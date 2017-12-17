@@ -1,14 +1,18 @@
 import Node from './Node';
 
 export default class LinkedList {
-  constructor (head) {
+  constructor(head = null) {
     this.head = head;
     this.length = 0;
   }
 
-unshift() {
-
-}
+  //add to the front of the list
+  unshift(data) {
+    
+    var node = new Node(data);
+    this.length += 1;
+    this.next = ;
+  }
 
   shift() {
 
@@ -19,6 +23,6 @@ unshift() {
   }
 
   pop() {
-    
+   
   }
 }
