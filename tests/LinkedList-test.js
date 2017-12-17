@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import Node from '../scripts/Node'
-import LinkedList from '../scripts/LinkedList'
+import Node from '../scripts/Node';
+import LinkedList from '../scripts/LinkedList';
 
 describe('LINKED LIST', () => {
   let list;
@@ -27,11 +27,11 @@ describe('LINKED LIST', () => {
       expect(list.length).to.equal(2);
       expect(list.head.data).to.equal('goose');
       expect(list.head.next.data).to.equal('duck');
-    })
-  })
+    });
+  });
 
   describe('SHIFT', () => {
-    it.skip('should return null if nothing in the list', () => {
+    it('should return null if nothing in the list', () => {
       let result = list.shift();
 
       expect(result).to.equal(null)

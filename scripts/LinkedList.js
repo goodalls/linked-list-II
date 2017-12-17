@@ -1,17 +1,33 @@
 import Node from './Node';
 
 export default class LinkedList {
-  constructor(head = null) {
-    this.head = head;
+  constructor() {
+    this.head = null;
     this.length = 0;
   }
 
-  //add to the front of the list
+  isEmpty() {
+    return this.head === null;
+  }
+
+  length() {
+    var current = this.head;
+    var count = 0;
+
+    while (current !== null) {
+      count++
+      current = current.next;
+    }
+    return count;
+  }
+
+  // add to the front of the list
   unshift(data) {
-    
-    var node = new Node(data);
+
+    var node = new Node(data, this.head);
+
+    this.head = node;
     this.length += 1;
-    this.next = ;
   }
 
   shift() {
@@ -26,3 +42,5 @@ export default class LinkedList {
    
   }
 }
+
+var list = new LinkedList();
