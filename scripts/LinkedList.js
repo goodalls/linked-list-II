@@ -35,7 +35,7 @@ export default class LinkedList {
     if (this.length === 0) {
       return null;
     } else {
-      const removed = this.head;
+      let removed = this.head;
       this.length -= 1;
       this.head = this.head.next;
       return removed;
@@ -63,7 +63,7 @@ export default class LinkedList {
 
   // remove node from the end of the linked list.
   pop() {
-    var current = this.head;
+    let current = this.head;
     let previous 
 
     if (this.length === 0) {

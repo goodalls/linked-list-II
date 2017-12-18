@@ -45,7 +45,7 @@ describe('LINKED LIST', () => {
       expect(result.data).to.equal('duck');
     });
 
-    it.skip('should remove items from the front of list / head', () => {
+    it('should remove items from the front of list / head', () => {
 
       list.unshift('duck');
       list.unshift('goose');
@@ -53,15 +53,11 @@ describe('LINKED LIST', () => {
       expect(list.head.next.data).to.equal('duck');
 
       // remove goose from list
-      const result = list.shift();
-      expect(result.data).to.equal('goose');
-
+      expect(list.shift().data).to.equal('goose');
       // duck should now be back at the start of the list
       expect(list.head.data).to.equal('duck');
-
       // remove duck from list
-      expect(result.data).to.equal('duck');
-
+      expect(list.shift().data).to.equal('duck');
       // no more items in our list
       expect(list.head).to.equal(null);
     });
@@ -114,7 +110,7 @@ describe('LINKED LIST', () => {
     });
   });
 
-  describe.only('POP', () => {
+  describe('POP', () => {
     it('should return null if nothing in list', () => {
       expect(list.length).to.eq(0);
       expect(list.pop()).to.eq(null);
