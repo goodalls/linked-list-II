@@ -86,17 +86,6 @@ export default class LinkedList {
     return current;
   }
 
-  print() {
-    let output = '[';
-    let current = this.head;
-
-    while (current !== null) {
-      output += current.data;
-      if (current.next !== null) {
-        output += ',';
-      }
-    }
-  }
 
   find(data) {
     let foundNode = null;
@@ -134,6 +123,17 @@ export default class LinkedList {
         currNode = null;
       }
     }
+  }
+
+  toArray() {
+    let output = [];
+    let current = this.head;
+
+    while (current !== null) {
+      output.push(current.data);
+      current = current.next
+    }
+    return output;
   }
 }
 
