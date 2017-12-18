@@ -64,22 +64,39 @@ export default class LinkedList {
   // remove node from the end of the linked list.
   pop() {
     var current = this.head;
+    let previous 
 
     if (this.length === 0) {
       return null;
     }
 
     if (this.length === 1) {
+      let last = this.head;
       this.head = null;
       this.next = null;
+      this.length -= 1;
+      return last;
     }
 
     while (current.next !==  null) {
+      previous = current;
       current = current.next;
     }
-    current.next = null;
+    previous.next = null;
     this.length -= 1;
     return current;
+  }
+
+  print() {
+    let output = '[';
+    let current = this.head;
+
+    while (current !== null) {
+      output += current.data;
+      if (current.next !== null) {
+        output += ',';
+      }
+    }
   }
 }
 
