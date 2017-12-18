@@ -15,7 +15,7 @@ export default class LinkedList {
     var count = 0;
 
     while (current !== null) {
-      count++
+      count += 1;
       current = current.next;
     }
     return count;
@@ -32,18 +32,20 @@ export default class LinkedList {
 
   // remove node from the front of the linked list.
   shift() {
-
     if (this.length === 0) {
       return null;
+    } else {
+      const removed = this.head;
+      this.length -= 1;
+      this.head = this.head.next;
+      return removed;
     }
-    this.length -= 1;
-    return this.head = this.head.next;
   }
 
   //  add node to the end of the linked list.
   push(data) {
-    var node = new Node(data, null);
-    var current = this.head;
+    let node = new Node(data, null);
+    let current = this.head;
 
     if (this.length === 0) {
       this.head = node;
@@ -56,6 +58,7 @@ export default class LinkedList {
     }
     current.next = node;
     this.length += 1;
+    return node;
   }
 
   // remove node from the end of the linked list.
@@ -66,11 +69,17 @@ export default class LinkedList {
       return null;
     }
 
+    if (this.length === 1) {
+      this.head = null;
+      this.next = null;
+    }
+
     while (current.next !==  null) {
       current = current.next;
     }
     current.next = null;
     this.length -= 1;
+    return current;
   }
 }
 

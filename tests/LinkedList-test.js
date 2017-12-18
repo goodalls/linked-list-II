@@ -37,7 +37,7 @@ describe('LINKED LIST', () => {
       expect(result).to.equal(null);
     });
 
-    it.skip('should return the first item in the list', () => {
+    it('should return the first item in the list', () => {
       list.unshift('duck');
 
       expect(list.head.data).to.equal('duck');
@@ -53,7 +53,7 @@ describe('LINKED LIST', () => {
       expect(list.head.next.data).to.equal('duck');
 
       // remove goose from list
-      let result = list.shift();
+      const result = list.shift();
       expect(result.data).to.equal('goose');
 
       // duck should now be back at the start of the list
@@ -114,7 +114,7 @@ describe('LINKED LIST', () => {
     });
   });
 
-  describe('POP', () => {
+  describe.only('POP', () => {
     it('should return null if nothing in list', () => {
       expect(list.length).to.eq(0);
       expect(list.pop()).to.eq(null);
@@ -135,21 +135,21 @@ describe('LINKED LIST', () => {
       expect(list.length).to.eq(0);
     });
 
-    it.skip('should set the list head to null', () => {
+    it('should set the list head to null', () => {
       list.push('duck');
       let result = list.pop();
 
       expect(list.head).to.eq(null);
     });
 
-    it.skip('should return the last element', () => {
+    it('should return the last element', () => {
       list.push('duck');
       const result = list.pop();
 
       expect(result.data).to.eq('duck');
     });
 
-    it.skip('should return the last element from the list', () => {
+    it('should return the last element from the list', () => {
       list.push('duck');
       list.push('goose');
       list.push('swan');
@@ -159,7 +159,7 @@ describe('LINKED LIST', () => {
       expect(output.data).to.eq('southern screamer');
     });
 
-    it.skip('should remove the last element from the list', () => {
+    it('should remove the last element from the list', () => {
       list.push('duck');
       list.push('goose');
       list.push('swan');
