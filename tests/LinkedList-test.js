@@ -183,21 +183,21 @@ describe('LINKED LIST', () => {
       list.push('world');
     });
 
-    it.skip('should return the node if it is found', () => {
+    it('should return the node if it is found', () => {
       const result = list.find('hello');
 
       expect(result.data).to.eq('hello');
       expect(result.next.data).to.eq('world');
     });
 
-    it.skip('should return true the node if node in list', () => {
+    it('should return true the node if node in list', () => {
       const result = list.find('world');
 
       expect(result.data).to.eq('world');
       expect(result.next).to.eq(null);
     });
 
-    it.skip('should return null if node is missing', () => {
+    it('should return null if node is missing', () => {
       const result = list.find('nope');
 
       expect(result).to.eq(null);
@@ -235,15 +235,15 @@ describe('LINKED LIST', () => {
     });
   });
 
-  describe('DELETE', () => {
-    it.skip('deletes a solo node', () => {
+  describe.only('DELETE', () => {
+    it('deletes a solo node', () => {
       list.push('hello');
       list.delete('hello');
       expect(list.length).to.eq(0);
       expect(list.head).to.eq(null);
     });
 
-    it.skip('does not perform a delete when a node does not match', () => {
+    it('does not perform a delete when a node does not match', () => {
       list.push('hello');
       list.delete('goodbye');
       expect(list.length).to.eq(1);
@@ -259,7 +259,7 @@ describe('LINKED LIST', () => {
         list.push('friend');
       });
 
-      it.skip('changes the list length', () => {
+      it('changes the list length', () => {
         expect(list.head.next.data).to.eq('darkness');
         expect(list.length).to.eq(5);
 
@@ -271,7 +271,7 @@ describe('LINKED LIST', () => {
         expect(list.length).to.eq(3);
       });
 
-      it.skip('resets the next property on the node before the deleted node', () => {
+      it('resets the next property on the node before the deleted node', () => {
         expect(list.head.next.data).to.eq('darkness');
 
         list.delete('darkness');
@@ -283,7 +283,7 @@ describe('LINKED LIST', () => {
         expect(list.head.next.data).to.eq('old')
       });
 
-      it.skip('resets the list.head if deleting the first node', () => {
+      it('resets the list.head if deleting the first node', () => {
         expect(list.head.data).to.eq('hello');
         list.delete('hello');
         expect(list.head.data).to.eq('darkness');

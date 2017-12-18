@@ -34,12 +34,11 @@ export default class LinkedList {
   shift() {
     if (this.length === 0) {
       return null;
-    } else {
-      let removed = this.head;
-      this.length -= 1;
-      this.head = this.head.next;
-      return removed;
-    }
+    } 
+    let removed = this.head;
+    this.length -= 1;
+    this.head = this.head.next;
+    return removed;
   }
 
   //  add node to the end of the linked list.
@@ -53,7 +52,7 @@ export default class LinkedList {
       return;
     }
 
-    while (current.next !==  null) {
+    while (current.next !== null) {
       current = current.next;
     }
     current.next = node;
@@ -64,9 +63,9 @@ export default class LinkedList {
   // remove node from the end of the linked list.
   pop() {
     let current = this.head;
-    let previous 
+    let previous
 
-    if (this.length === 0) {
+    if (!this.head) {
       return null;
     }
 
@@ -78,7 +77,7 @@ export default class LinkedList {
       return last;
     }
 
-    while (current.next !==  null) {
+    while (current.next !== null) {
       previous = current;
       current = current.next;
     }
@@ -95,6 +94,44 @@ export default class LinkedList {
       output += current.data;
       if (current.next !== null) {
         output += ',';
+      }
+    }
+  }
+
+  find(data) {
+    let foundNode = null;
+    let currNode = this.head;
+
+    while (currNode) {
+      if (currNode.data === data) {
+        foundNode = currNode;
+        break;
+      } else {
+        currNode = currNode.next;
+      }
+    }
+    return foundNode;
+  }
+
+  delete(data) {
+    
+    let currNode = this.head
+    let previous;
+    
+    if (this.head.data === data) {
+      this.length -= 1;
+      this.head = this.head.next;
+      return;
+    }
+
+    while (currNode) {
+      if (currNode.data !== data) {
+        previous = currNode;
+        currNode = currNode.next;
+      } else {
+        this.length -= 1;
+        previous.next = currNode.next;
+        currNode = null;
       }
     }
   }
